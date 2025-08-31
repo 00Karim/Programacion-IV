@@ -14,8 +14,10 @@ abstract class Empleado {
 }
 
 class EmpleadoTiempoCompleto extends Empleado {
+    private bono:number = 20000
+
     calcularSalario(): number {
-        return this.salarioBase + 20000;
+        return this.salarioBase + this.bono;
     }
 }
 
@@ -25,7 +27,7 @@ class EmpleadoMedioTiempo extends Empleado {
     }
 }
 
-// Ejemplo de uso
+// Ejemplo de uso utilizando un arreglo de Empleado
 const empleados: Empleado[] = [
     new EmpleadoTiempoCompleto("Ana", 50000),
     new EmpleadoMedioTiempo("Luis", 40000)

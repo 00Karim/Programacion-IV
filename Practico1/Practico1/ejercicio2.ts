@@ -1,13 +1,18 @@
 // Definimos una clase abstracta Figura
 abstract class Figura {
+    nombre:string
+
+    constructor(nombre:string){
+        this.nombre = nombre
+    }
     // Método abstracto que cada figura deberá implementar
     abstract calcularArea(): number;
 }
 
-// Subclase: Rectángulo
-class Rectangulo extends Figura {
-    constructor(private base: number, private altura: number) {
-        super();
+// Subclase: Cuadrado
+class Cuadrado extends Figura {
+    constructor(private base: number, private altura: number, nombre:string) {
+        super(nombre);
     }
 
     calcularArea(): number {
@@ -17,8 +22,8 @@ class Rectangulo extends Figura {
 
 // Subclase: Círculo
 class Circulo extends Figura {
-    constructor(private radio: number) {
-        super();
+    constructor(private radio: number, nombre:string) {
+        super(nombre);
     }
 
     calcularArea(): number {
@@ -28,8 +33,8 @@ class Circulo extends Figura {
 
 // Subclase: Triángulo
 class Triangulo extends Figura {
-    constructor(private base: number, private altura: number) {
-        super();
+    constructor(private base: number, private altura: number, nombre:string) {
+        super(nombre);
     }
 
     calcularArea(): number {
@@ -37,12 +42,12 @@ class Triangulo extends Figura {
     }
 }
 
-// 🔹 Probamos las clases
-const rectangulo = new Rectangulo(10, 5);
+// Probamos las clases
+const rectangulo = new Cuadrado(10, 5, "Rectangulo");
 console.log("Área del rectángulo:", rectangulo.calcularArea());
 
-const circulo = new Circulo(7);
+const circulo = new Circulo(7, "Esfera");
 console.log("Área del círculo:", circulo.calcularArea());
 
-const triangulo = new Triangulo(8, 4);
+const triangulo = new Triangulo(8, 4, "Isoceles");
 console.log("Área del triángulo:", triangulo.calcularArea());
