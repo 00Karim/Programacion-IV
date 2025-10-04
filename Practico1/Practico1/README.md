@@ -1,7 +1,10 @@
 # Práctico 1.
 
 ## Integrantes
-
+Baudrix Fernandez, Franco
+Pellegrini, Jesica Johanna
+Ruppel, Federico
+Velez Ali, Karim
 
 ## Ejercicio 3 – Herencia y Polimorfismo (UML)
 
@@ -9,6 +12,7 @@ classDiagram
     class Empleado {
         - nombre: string
         - salarioBase: number
+        + constructor(nombre, salarioBase)
         + calcularSalario(): number
     }
 
@@ -25,25 +29,9 @@ classDiagram
 
 ## Ejercicio 4
 
-classDiagram
-    class Persona {
-        - nombre: string
-        - edad: number
-        + presentarse(): void
-    }
-
-    class Estudiante {
-        - carrera: string
-        + estudiar(): void
-    }
-
-    class Profesor {
-        - materia: string
-        + enseñar(): void
-    }
-
-    Persona <|-- Estudiante
-    Persona <|-- Profesor
+* Todos los animales tienen nombre y hacen un sonido (aunque cada uno define el propio)
+* Los pajaros, ademas de hacer sonido, implementan la interfaz Volador, por lo tanto vuelan
+* Los zorros en cambio no vuelan, pero heredan la clase Animal
 
 ## Ejercicio 5
 
