@@ -20,6 +20,9 @@ Proyecto con TypeScript + Express + Zod + Jest + Supertest.
 5 - Agregar test integracion E2E con supertest (rojo)
 ![alt text](img/image6.png)
 
+5 - Implementar las rutas para la integracion E2E (verde)
+![alt text](img/image7.png)
+
 # Matriz de casos
 
 # Guia de ejecucion

@@ -41,7 +41,6 @@ class OrderModel{
                 if(this.orders[i]?._id === _id){ // recorremos todo el array en busca de un match de id 
                     this.orders.splice(i, 1) // si lo encontramos lo sacamos del array
                     return true
-                    i = this.orders.length // cuando lo elimina hacemos que i sea del tamanio del array asi se termina el for loop
                 }
             }
             return false
