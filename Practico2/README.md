@@ -14,8 +14,8 @@ Proyecto con TypeScript + Express + Zod + Jest + Supertest.
 3 - Agregar test de integracion (rojo)
 ![alt text](img/image4.png)
 
-4 - Implementar integracion
-bla bla
+4 - Implementar integracion (verde)
+![alt text](image5.png) 
 
 # Matriz de casos
 

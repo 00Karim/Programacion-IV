@@ -15,13 +15,14 @@ describe("Chequea la logica de los metodos de OrderModel", () => {
     it("Se puede buscar una order por su id", () => { 
         const foundOrder = OrderModel.getOrderById(idActual)      
         expect(foundOrder).toBeDefined()
-        expect(foundOrder.totalPrice).toBe(400)
-        expect(foundOrder.status).toBe("pending")
+        expect(foundOrder?.totalPrice).toBe(3000)
+        expect(foundOrder?.status).toBe("pending")
     })
     it("Se puede recibir todas las ordenes", () => { 
+        OrderModel.createOrder("Calle 123 en la rotonda en el piso", [pizza1, pizza2], "pending", 3) // creamos otra order asi el array tiene el tamanio necesario para llevar a cabo esta prueba
         const allOrders = OrderModel.getAllOrders()      
-        expect(allOrders[0]._id).toBe("0")
-        expect(allOrders[1]._id).toBe("1")
+        expect(allOrders[0]?._id).toBe("0")
+        expect(allOrders[1]?._id).toBe("1")
     })
     it("Se puede borrar una order por su id", () => { 
         const largoPrevio = OrderModel.orders.length
@@ -33,9 +34,10 @@ describe("Chequea la logica de los metodos de OrderModel", () => {
         const newOrder = OrderModel.createOrder("A una cuadra de la cuadra", [pizza1, pizza2], "pending", 3000)
         idActual = newOrder._id
         OrderModel.changeStatus(idActual, "delivered")
-        expect(newOrder.status).toBe("delivered")
+        const changedOrder = OrderModel.getOrderById(idActual)
+        expect(changedOrder?.status).toBe("delivered")
     })
     it("El status de una order no puede pasar de delivered a cancelled", () => { 
-        expect( () => OrderModel.changeStatus(idActual, "cancelled")).toThrow()
+        expect( () => OrderModel.changeStatus(idActual, "cancelled")).toThrow("No se puede cambiar el estado de delivered a otro")
     })
 })
