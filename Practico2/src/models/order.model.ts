@@ -30,9 +30,11 @@ class OrderModel{
             for(let i = 0; i<this.orders.length; i++){
                 if(this.orders[i]?._id === _id){ // recorremos todo el array en busca de un match de id 
                     this.orders.splice(i, 1) // si lo encontramos lo sacamos del array
+                    return true
                     i = this.orders.length // cuando lo elimina hacemos que i sea del tamanio del array asi se termina el for loop
                 }
             }
+            return false
         } catch (error) {
             if (error instanceof ZodError) {
                 throw new Error("Datos inválidos al eliminar la orden: " + error.issues[0]?.message); // error de validación
@@ -92,6 +94,7 @@ class OrderModel{
                 if (currentOrder && currentOrderIndex !== undefined){ // asi no nos da el error: The left-hand side of an assignment expression may not be an optional property access.ts(2779)
                     currentOrder.status = newStatus
                     this.orders[currentOrderIndex] = currentOrder  
+                    return true
                 }
             }
         } catch (error) {

@@ -11,11 +11,14 @@ Proyecto con TypeScript + Express + Zod + Jest + Supertest.
 2.1 - Despues de agregar test que faltaba de order:
 ![alt text](img/image3.png)
 
-3 - Agregar test de integracion (rojo)
+3 - Agregar test de integracion de los modelos(rojo)
 ![alt text](img/image4.png)
 
 4 - Implementar integracion (verde)
-![alt text](image5.png) 
+![alt text](img/image5.png) 
+
+5 - Agregar test integracion E2E con supertest (rojo)
+![alt text](img/image6.png)
 
 # Matriz de casos
 
