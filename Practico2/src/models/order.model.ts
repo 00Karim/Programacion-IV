@@ -10,8 +10,18 @@ class OrderModel{
         this.orders = orders
     }  
 
-    createOrder(address: string, items: Array<Pizza>, status: string, totalPrice: number){
+    createOrder(address: string, items: Array<Pizza>, status: string){
         try {
+            let totalPrice = 0
+            for(const item of items){
+                if(item.size === "S")//Total price se calcula en base al tamanio de la pizza
+                    totalPrice+= 5
+                else if (item.size === "M")
+                    totalPrice+= 10
+                else
+                    totalPrice+=15
+                totalPrice+= item.toppings.length * 2//Luego se le suma el precio de cada topping que valen todos $2
+            }
             const newOrder = orderSchema.parse({_id: this.id, address, items, status, totalPrice})
             this.orders.push(newOrder)
             this.id = String(Number(this.id + 1)) // lo convertimos a numero para sumarle 1 y despues lo devolvemos a string
