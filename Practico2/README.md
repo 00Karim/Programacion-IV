@@ -2,17 +2,17 @@
 Proyecto con TypeScript + Express + Zod + Jest + Supertest.
 
 # TDD Evidencia
-1 - Escribir tests unitarios:
+1 - Escribir tests unitarios (rojo):
 ![alt text](img/image.png)
 
-2 - Implementar minimo:
+2 - Implementar minimo (verde):
 ![alt text](img/image2.png)
 
 2.1 - Despues de agregar test que faltaba de order:
 ![alt text](img/image3.png)
 
-3 - Agregar test de integracion
-bla bla
+3 - Agregar test de integracion (rojo)
+![alt text](img/image4.png)
 
 4 - Implementar integracion
 bla bla

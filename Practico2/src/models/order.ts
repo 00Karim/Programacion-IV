@@ -1,9 +1,10 @@
 import { z } from "zod"
 import { pizzaSchema } from "./pizza"
 
-const statusEnum = ["pending", "completed", "delivered", "cancelled"]
+export const statusEnum = ["pending", "completed", "delivered", "cancelled"]
 
 export const orderSchema = z.object({
+    _id: z.string(),
     address: z.string().min(10, "La direccion debe tener como minimo 10 caracteres"),
     items: z.array(pizzaSchema).min(1, "La cantidad de items no puede estar vacia"),
     status: z.enum(statusEnum, {
