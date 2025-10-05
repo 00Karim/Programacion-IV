@@ -8,6 +8,7 @@ describe("Chequeos de order", () => {
     it("No se debe poder hacer un order si address es menor a 10", () => {
         const caracteristicas = 
             { 
+                _id: "1",
                 address: "Mi casa", 
                 items: [pizza1, pizza2],
                 status: "pending",
@@ -18,6 +19,7 @@ describe("Chequeos de order", () => {
     it("No se debe poder hacer un order si array de items no tiene nada", () => {
         const caracteristicas = 
             { 
+                _id: "1",
                 address: "Mi casa", 
                 items: [],
                 status: "pending",
@@ -28,6 +30,7 @@ describe("Chequeos de order", () => {
     it("No se debe poder hacer una order si status es undefined", () => {
         const caracteristicas = 
             { 
+                _id: "1",
                 address: "Mi casa en bahia blanca", 
                 items: [pizza1, pizza2],
                 status: "",
@@ -38,6 +41,7 @@ describe("Chequeos de order", () => {
     it("No se debe poder hacer una order si status no es un valor permitido", () => {
         const caracteristicas = 
             { 
+                _id: "1",
                 address: "Mi casa", 
                 items: [pizza1, pizza2],
                 status: "dropping",
@@ -48,6 +52,7 @@ describe("Chequeos de order", () => {
     it("No se debe poder hacer una order si total price da negativo", () => {
         const caracteristicas = 
             { 
+                _id: "1",
                 address: "Mi casa", 
                 items: [pizza1, pizza2],
                 status: "pending",
@@ -58,6 +63,7 @@ describe("Chequeos de order", () => {
     it("Se debe poder hacer una order si esta todo bien", () => {
         const caracteristicas = 
             { 
+                _id: "1",
                 address: "Mi casa en la esquina", 
                 items: [pizza1, pizza2],
                 status: "pending",
