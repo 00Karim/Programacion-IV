@@ -6,7 +6,10 @@ Proyecto con TypeScript + Express + Zod + Jest + Supertest.
 ![alt text](img/image.png)
 
 2 - Implementar minimo:
-blabla
+![alt text](img/image2.png)
+
+2.1 - Despues de agregar test que faltaba de order:
+![alt text](img/image3.png)
 
 3 - Agregar test de integracion
 bla bla
