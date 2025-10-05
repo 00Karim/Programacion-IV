@@ -1,4 +1,5 @@
 import { Pizza } from "./pizza"
+import { pizzaSchema } from "./pizza"
 
 class PizzaModel{
 
@@ -7,7 +8,9 @@ class PizzaModel{
     }  
 
     createPizza(size: string, toppings: string[]){
-        
+        const newPizza = pizzaSchema.parse({size, toppings})
+        this.pizzas.push(newPizza)
+        return newPizza
     }
 
 }
