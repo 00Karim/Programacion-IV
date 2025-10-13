@@ -72,3 +72,7 @@ curl -X PUT http://localhost:3000/order/0 \
 #### El siguiente curl borra la orden creada anteriormente
 
 curl -X DELETE http://localhost:3000/order/0
+
+# COMMITS evidenciando TDD
+
+![alt text](./img/imagenCommits.png)
