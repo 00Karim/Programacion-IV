@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Menu } from "../../Components/Menu";
+import { Menu } from "../../Components";
 import { describe, test, expect } from "vitest";
 
 describe("TodoApp", () => {

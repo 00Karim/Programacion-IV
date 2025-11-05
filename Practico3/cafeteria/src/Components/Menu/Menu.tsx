@@ -1,12 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-type Producto = {
-  id: number;
-  imagen: string;
-  titulo: string;
-  precio: number;
-};
+import type { Producto } from "../../types/Product";
+
+import { BotonAgregar } from "../BotonAgregar/BotonAgregar/BotonAgregar";
 
 const Menu: React.FC = () => {
   const [productos, setProductos] = useState<Producto[]>();
@@ -15,6 +12,7 @@ const Menu: React.FC = () => {
     fetch("http://localhost:/api/menu")
       .then((res) => res.json())
       .then((data: Producto[]) => {
+        console.log(data);
         setProductos(data);
       })
       .catch((error) => console.error("Error al cargar productos:", error));
@@ -24,6 +22,7 @@ const Menu: React.FC = () => {
       <ul>
         {productos?.map((producto, index) => (
           <li key={index + producto.titulo}>{producto.titulo}</li>
+          <BotonAgregar onAdd=></BotonAgregar>
         ))}
       </ul>
     </div>
