@@ -2,6 +2,8 @@ import { rest } from 'msw';
 
 export const handlers = [
   rest.get('http://localhost/api/menu', (req, res, ctx) => {
+    let request = req
+    request = request
     return res(
       ctx.status(200),
       ctx.json([
