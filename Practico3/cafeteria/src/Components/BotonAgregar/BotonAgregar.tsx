@@ -3,7 +3,7 @@ import type { Producto } from "../../types/Product";
 
 type BotonAgregarProps = {
   onAdd: (p: Producto) => void;
-  p: Producto; //
+  p: Producto;
 };
 
 const BotonAgregar: React.FC<BotonAgregarProps> = ({ onAdd, p }) => {
